@@ -9,15 +9,15 @@ class MyLinkedList{
       prev = p;
     }
 
-    public int getData(int d){
+    public int getData(){
       return data;
     }
 
-    public Node getNext(Node n){
+    public Node getNext(){
       return next;
     }
 
-    public Node getPrev(Node p){
+    public Node getPrev(){
       return prev;
     }
 
@@ -33,21 +33,25 @@ class MyLinkedList{
       prev = p;
     }
   }
-   private int size;
-   private Node start,end;
+  private int size;
+  private Node start,end;
 
-   public int size(){
-     return size;
-   }
-   public boolean add(int value){
-     Node newEnd = new Node(value, end, null);
-     end.setNext(newEnd);
-     return true;
-   }
-   public String toString(){
-     String output = "";
-     Node current = start;
-     //for(current.)
-     return output;
-   }
+  public int size(){
+    return size;
+  }
+  public boolean add(int value){
+    Node newEnd = new Node(value, end, null);
+    end.setNext(newEnd);
+    return true;
+  }
+  public String toString(){
+    String output = "";
+    Node current = start;
+    while(current.getNext() != null){
+      //output += current.getData() + ", ";
+      //current = current.getNext();
+    }
+    //output += end.getData();
+    return output;
+  }
 }
