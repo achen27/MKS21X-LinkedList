@@ -48,10 +48,10 @@ class MyLinkedList{
     String output = "";
     Node current = start;
     while(current.getNext() != null){
-      //output += current.getData() + ", ";
-      //current = current.getNext();
+      output += current.getData() + ", ";
+      current = current.getNext();
     }
-    //output += end.getData();
+    output += end.getData();
     return output;
   }
 }
