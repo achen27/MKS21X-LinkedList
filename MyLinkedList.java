@@ -28,7 +28,8 @@ class MyLinkedList{
      return size;
    }
    public boolean add(int value){
-
+     Node newEnd = new Node(value, end, null);
+     end.setNext(newEnd);
      return true;
    }
    public String toString(){
