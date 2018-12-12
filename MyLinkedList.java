@@ -8,6 +8,18 @@ class MyLinkedList{
       next = n;
       prev = p;
     }
+
+    public void setData(int d){
+      data = d;
+    }
+
+    public void setNext(Node n){
+      next = n;
+    }
+
+    public void setPrev(Node p){
+      prev = p;
+    }
   }
    private int size;
    private Node start,end;
@@ -16,6 +28,7 @@ class MyLinkedList{
      return size;
    }
    public boolean add(int value){
+
      return true;
    }
    public String toString(){
