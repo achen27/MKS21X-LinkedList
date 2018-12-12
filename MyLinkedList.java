@@ -9,6 +9,18 @@ class MyLinkedList{
       prev = p;
     }
 
+    public int getData(int d){
+      return data;
+    }
+
+    public Node getNext(Node n){
+      return next;
+    }
+
+    public Node getPrev(Node p){
+      return prev;
+    }
+
     public void setData(int d){
       data = d;
     }
@@ -33,6 +45,9 @@ class MyLinkedList{
      return true;
    }
    public String toString(){
-     return "";
+     String output = "";
+     Node current = start;
+     //for(current.)
+     return output;
    }
 }
