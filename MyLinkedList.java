@@ -4,30 +4,30 @@ class MyLinkedList{
     private Integer data;
     private Node next,prev;
 
-    public Node(int d, Node n, Node p){
+    public Node(Node p, int d, Node n){
+      prev = p;
       data = d;
       next = n;
-      prev = p;
     }
 
+    public Node prev(){
+      return prev;
+    }
     public Integer getData(){
       return data;
     }
     public Node next(){
       return next;
     }
-    public Node prev(){
-      return prev;
-    }
 
+    public void setPrev(Node p){
+      prev = p;
+    }
     public void setData(Integer i){
       data = i;
     }
     public void setNext(Node n){
       next = n;
-    }
-    public void setPrev(Node p){
-      prev = p;
     }
 
     public String toString(){
@@ -48,11 +48,11 @@ class MyLinkedList{
 
   public boolean add(Integer value){
     if (size == 0){
-      Node newNode = new Node(value, null, null);
+      Node newNode = new Node(null, value, null);
       start = newNode;
       end = newNode;
     } else {
-      Node newEnd = new Node(value, end, null);
+      Node newEnd = new Node(end, value, null);
       end.setNext(newEnd);
     }
     size++;
@@ -117,12 +117,14 @@ class MyLinkedList{
 
   public void add(int index, Integer value){
     if(index == 0){
-      Node newNode = new Node(value, null, start);
+      Node newNode = new Node(null, value, start);
       start.setPrev(newNode);
     }else if(index == size - 1){
       add(value);
     }else{
-
+      Node prev = getNthNode(index);
+      Node next = prev.next();
+      Node newNode = new Node(prev, value, next);
     }
   }
 
