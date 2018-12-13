@@ -120,7 +120,7 @@ class MyLinkedList{
       Node newNode = new Node(value, null, start);
       start.setPrev(newNode);
     }else if(index == size - 1){
-
+      add(value);
     }else{
 
     }
