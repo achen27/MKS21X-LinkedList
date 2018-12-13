@@ -102,4 +102,17 @@ class MyLinkedList{
     return current.getData() == value;
   }
 
+  public int indexOf(Integer value){
+    Node current = start;
+    int index = -1;
+    while(current.next() != null){
+      if(current.getData() == value){
+        index = current.getData();
+        return index;
+      }
+      current = current.next();
+    }
+    return index;
+  }
+
 }
