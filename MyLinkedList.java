@@ -70,4 +70,13 @@ class MyLinkedList{
     return output;
   }
 
+  private Node getNthNode(int i){
+    int index = 0;
+    Node current = start;
+    while(index < i){
+      current = current.next();
+    }
+    return current;
+  }
+
 }
