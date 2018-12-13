@@ -84,4 +84,11 @@ class MyLinkedList{
     return current.getData();
   }
 
+  public Integer set(int index, Integer value){
+    Node current = getNthNode(index);
+    Integer old = current.getData();
+    current.setData(value);
+    return old;
+  }
+
 }
