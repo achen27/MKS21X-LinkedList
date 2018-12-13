@@ -125,6 +125,8 @@ class MyLinkedList{
       Node prev = getNthNode(index);
       Node next = prev.next();
       Node newNode = new Node(prev, value, next);
+      prev.setNext(newNode);
+      next.setPrev(newNode);
     }
   }
 
