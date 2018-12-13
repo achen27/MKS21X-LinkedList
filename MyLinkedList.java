@@ -10,7 +10,7 @@ class MyLinkedList{
       prev = p;
     }
 
-    public int getData(){
+    public Integer getData(){
       return data;
     }
     public Node next(){
@@ -77,6 +77,11 @@ class MyLinkedList{
       current = current.next();
     }
     return current;
+  }
+
+  public Integer get(int index){
+    Node current = getNthNode(index);
+    return current.getData();
   }
 
 }
