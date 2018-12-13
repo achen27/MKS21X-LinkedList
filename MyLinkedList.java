@@ -115,4 +115,15 @@ class MyLinkedList{
     return index;
   }
 
+  public void add(int index, Integer value){
+    if(index == 0){
+      Node newNode = new Node(value, null, start);
+      start.setPrev(newNode);
+    }else if(index == size - 1){
+
+    }else{
+
+    }
+  }
+
 }
