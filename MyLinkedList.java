@@ -51,9 +51,10 @@ class MyLinkedList{
       Node newNode = new Node(value, null, null);
       start = newNode;
       end = newNode;
+    } else {
+      Node newEnd = new Node(value, end, null);
+      end.setNext(newEnd);
     }
-    Node newEnd = new Node(value, end, null);
-    end.setNext(newEnd);
     return true;
   }
 
