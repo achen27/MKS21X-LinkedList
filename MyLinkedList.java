@@ -39,7 +39,7 @@ class MyLinkedList{
   private Node start,end;
 
   public MyLinkedList(){
-
+    size = 0;
   }
 
   public int size(){
