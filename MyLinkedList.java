@@ -91,4 +91,15 @@ class MyLinkedList{
     return old;
   }
 
+  public boolean contains(Integer value){
+    Node current = start;
+    while(current.next() != null){
+      if(current.getData() == value){
+        return true;
+      }
+      current = current.next();
+    }
+    return current.getData() == value;
+  }
+
 }
