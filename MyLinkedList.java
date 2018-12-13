@@ -47,7 +47,7 @@ class MyLinkedList{
   }
 
   public boolean add(Integer value){
-    if (this.size() == 0){
+    if (size == 0){
       Node newNode = new Node(value, null, null);
       start = newNode;
       end = newNode;
@@ -55,6 +55,7 @@ class MyLinkedList{
       Node newEnd = new Node(value, end, null);
       end.setNext(newEnd);
     }
+    size++;
     return true;
   }
 
