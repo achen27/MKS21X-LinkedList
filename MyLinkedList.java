@@ -130,4 +130,21 @@ class MyLinkedList{
     }
   }
 
+  public Integer remove(int index){
+    if(index == 0){
+
+    }else if(index == size - 1){
+
+    }else{
+      Node removing = getNthNode(index);
+      Integer old = removing.getData();
+      Node prev = removing.prev();
+      Node next = removing.next();
+      prev.setNext(next);
+      next.setPrev(prev);
+      return old;
+    }
+    return 1;
+  }
+
 }
