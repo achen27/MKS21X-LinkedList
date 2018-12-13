@@ -132,7 +132,11 @@ class MyLinkedList{
 
   public Integer remove(int index){
     if(index == 0){
-
+      Node removing = start;
+      Integer old = start.getData();
+      Node next = start.next();
+      start = next;
+      return old;
     }else if(index == size - 1){
 
     }else{
