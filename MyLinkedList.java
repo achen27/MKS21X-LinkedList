@@ -1,7 +1,7 @@
 class MyLinkedList{
 
   class Node{
-    private Interger data;
+    private Integer data;
     private Node next,prev;
 
     public Node(int d, Node n, Node p){
@@ -38,13 +38,16 @@ class MyLinkedList{
   private int size;
   private Node start,end;
 
-  //public MyLinkedList();
+  public MyLinkedList(){
+
+  }
 
   public int size(){
     return size;
   }
 
-  public boolean add(int value){
+  public boolean add(Integer value){
+    //if
     Node newEnd = new Node(value, end, null);
     end.setNext(newEnd);
     return true;
