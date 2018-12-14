@@ -88,6 +88,9 @@ class MyLinkedList{
   }
 
   public Integer get(int index){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
     Node current = getNthNode(index);
     return current.getData();
   }
@@ -179,7 +182,7 @@ class MyLinkedList{
     //System.out.println(current.getData().equals(value));
     if (index < size || current.getData().equals(value)){
       //System.out.println(index);
-      System.out.println(remove(index));
+      remove(index);
       return true;
     }
     return false;
