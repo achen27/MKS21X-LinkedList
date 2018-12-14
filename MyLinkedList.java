@@ -92,13 +92,13 @@ class MyLinkedList{
       throw new IndexOutOfBoundsException();
     }
     Node current = getNthNode(index);
-    if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
-    }
     return current.getData();
   }
 
   public Integer set(int index, Integer value){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
     Node current = getNthNode(index);
     Integer old = current.getData();
     current.setData(value);
