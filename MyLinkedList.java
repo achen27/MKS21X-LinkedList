@@ -92,6 +92,9 @@ class MyLinkedList{
       throw new IndexOutOfBoundsException();
     }
     Node current = getNthNode(index);
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
     return current.getData();
   }
 
