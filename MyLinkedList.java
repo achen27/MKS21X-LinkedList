@@ -130,7 +130,7 @@ class MyLinkedList{
     }else if(index == size - 1){
       add(value);
     }else{
-      Node prev = getNthNode(index);
+      Node prev = getNthNode(index-1);
       Node next = prev.next();
       Node newNode = new Node(prev, value, next);
       prev.setNext(newNode);
