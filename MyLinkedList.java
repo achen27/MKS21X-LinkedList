@@ -166,6 +166,7 @@ class MyLinkedList{
       Integer old = end.getData();
       Node prev = end.prev();
       end = prev;
+      end.setNext(null);
       //System.out.println(size);
       size--;
       //System.out.println(size);
