@@ -76,10 +76,13 @@ class MyLinkedList{
   }
 
   private Node getNthNode(int i){
+    //System.out.println(this);
     int index = 0;
     Node current = start;
     while(index < i){
+      //System.out.println(index);
       current = current.next();
+      index++;
     }
     return current;
   }
