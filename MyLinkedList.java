@@ -144,12 +144,14 @@ class MyLinkedList{
       Integer old = start.getData();
       Node next = start.next();
       start = next;
+      size--;
       return old;
     }else if(index == size - 1){
       Node removing = end;
       Integer old = end.getData();
-      Node prev = start.prev();
+      Node prev = end.prev();
       end = prev;
+      size--;
       return old;
     }else{
       Node removing = getNthNode(index);
@@ -158,6 +160,7 @@ class MyLinkedList{
       Node next = removing.next();
       prev.setNext(next);
       next.setPrev(prev);
+      size--;
       return old;
     }
   }
@@ -166,11 +169,13 @@ class MyLinkedList{
     int index = 0;
     Node current = start;
     while(current.next() != null && current.getData() != value){
+      //System.out.println("here");
       index++;
       current = current.next();
     }
-    if (index < size - 1 || current.getData() == value){
-      remove(index);
+    //System.out.println(size - 1);
+    if (index < size || current.getData() == value){
+      System.out.println(remove(index));
       return true;
     }
     return false;
