@@ -150,6 +150,9 @@ class MyLinkedList{
   }
 
   public Integer remove(int index){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
     //System.out.println(size-1);
     if(index == 0){
       Node removing = start;
