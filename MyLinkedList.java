@@ -136,6 +136,7 @@ class MyLinkedList{
     if(index == 0){
       Node newNode = new Node(null, value, start);
       start.setPrev(newNode);
+      start = newNode;
       size++;
     }else if(index == size - 1){
       add(value);
@@ -164,9 +165,9 @@ class MyLinkedList{
       Integer old = end.getData();
       Node prev = end.prev();
       end = prev;
-      System.out.println(size);
+      //System.out.println(size);
       size--;
-      System.out.println(size);
+      //System.out.println(size);
       return old;
     }else{
       Node removing = getNthNode(index);
