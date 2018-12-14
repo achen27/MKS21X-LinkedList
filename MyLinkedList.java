@@ -130,6 +130,9 @@ class MyLinkedList{
   }
 
   public void add(int index, Integer value){
+    if (index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
     if(index == 0){
       Node newNode = new Node(null, value, start);
       start.setPrev(newNode);
