@@ -31,7 +31,7 @@ class MyLinkedList{
     }
 
     public String toString(){
-    return "";
+    return "[" + data + "]";
     }
   }
 
@@ -60,14 +60,18 @@ class MyLinkedList{
   }
 
   public String toString(){
-    String output = "";
-    Node current = start;
-    while(current.next() != null){
-      output += current.getData() + ", ";
-      current = current.next();
+    if (size == 0){
+      return "[]";
+    } else{
+      String output = "[";
+      Node current = start;
+      while(current.next() != null){
+        output += current.getData() + ", ";
+        current = current.next();
+      }
+      output += end.getData() + "]";
+      return output;
     }
-    output += end.getData();
-    return output;
   }
 
   private Node getNthNode(int i){
