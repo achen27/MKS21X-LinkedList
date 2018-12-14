@@ -153,20 +153,20 @@ class MyLinkedList{
     if (index < 0 || index >= size()){
       throw new IndexOutOfBoundsException();
     }
-    //System.out.println(size-1);
+    //System.out.println(index == size - 1);
     if(index == 0){
-      Node removing = start;
       Integer old = start.getData();
       Node next = start.next();
       start = next;
       size--;
       return old;
     }else if(index == size - 1){
-      Node removing = end;
       Integer old = end.getData();
       Node prev = end.prev();
       end = prev;
+      System.out.println(size);
       size--;
+      System.out.println(size);
       return old;
     }else{
       Node removing = getNthNode(index);
