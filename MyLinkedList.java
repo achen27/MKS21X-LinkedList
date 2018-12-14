@@ -159,6 +159,7 @@ class MyLinkedList{
       Integer old = start.getData();
       Node next = start.next();
       start = next;
+      start.setPrev(null);
       size--;
       return old;
     }else if(index == size - 1){
