@@ -154,4 +154,18 @@ class MyLinkedList{
     }
   }
 
+  public boolean remove(Integer value){
+    int index = 0;
+    Node current = start;
+    while(current.next() != null && current.getData() != value){
+      index++;
+      current = current.next();
+    }
+    if (index < size - 1 || current.getData() == value){
+      remove(index);
+      return true;
+    }
+    return false;
+  }
+
 }
