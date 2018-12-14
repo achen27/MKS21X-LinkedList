@@ -138,7 +138,11 @@ class MyLinkedList{
       start = next;
       return old;
     }else if(index == size - 1){
-
+      Node removing = end;
+      Integer old = end.getData();
+      Node prev = start.prev();
+      end = prev;
+      return old;
     }else{
       Node removing = getNthNode(index);
       Integer old = removing.getData();
@@ -148,7 +152,6 @@ class MyLinkedList{
       next.setPrev(prev);
       return old;
     }
-    return 1;
   }
 
 }
