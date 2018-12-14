@@ -127,6 +127,7 @@ class MyLinkedList{
     if(index == 0){
       Node newNode = new Node(null, value, start);
       start.setPrev(newNode);
+      size++;
     }else if(index == size - 1){
       add(value);
     }else{
@@ -135,10 +136,12 @@ class MyLinkedList{
       Node newNode = new Node(prev, value, next);
       prev.setNext(newNode);
       next.setPrev(newNode);
+      size++;
     }
   }
 
   public Integer remove(int index){
+    //System.out.println(size-1);
     if(index == 0){
       Node removing = start;
       Integer old = start.getData();
@@ -173,8 +176,9 @@ class MyLinkedList{
       index++;
       current = current.next();
     }
-    //System.out.println(size - 1);
-    if (index < size || current.getData() == value){
+    //System.out.println(current.getData().equals(value));
+    if (index < size || current.getData().equals(value)){
+      //System.out.println(index);
       System.out.println(remove(index));
       return true;
     }
