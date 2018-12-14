@@ -54,6 +54,7 @@ class MyLinkedList{
     } else {
       Node newEnd = new Node(end, value, null);
       end.setNext(newEnd);
+      end = newEnd;
     }
     size++;
     return true;
