@@ -192,8 +192,8 @@ class MyLinkedList{
       index++;
       current = current.next();
     }
-    //System.out.println(current.getData().equals(value));
-    if (index < size || current.getData().equals(value)){//checks to see if value is in the list
+    //System.out.println(index);
+    if (index < size-1 || current.getData().equals(value)){//checks to see if value is in the list
       //System.out.println(index);
       remove(index);//removes the element at the index
       return true;
