@@ -118,15 +118,16 @@ class MyLinkedList{
 
   public int indexOf(Integer value){//gives the index of teh first occurance of value entered
     Node current = start;
-    int index = -1;//returns -1 if value is not found in list
+    int index = 0;//returns -1 if value is not found in list
     while(current.next() != null){
       if(current.getData() == value){
-        index = current.getData();
+        //System.out.println(index);
         return index;
       }
       current = current.next();
+      index++;
     }
-    return index;
+    return -1;
   }
 
   public void add(int index, Integer value){//adds element with entered value at entered index
