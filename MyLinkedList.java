@@ -89,7 +89,7 @@ class MyLinkedList{
 
   public Integer get(int index){//returns the value at the index requested
     if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("Index Out of Bounds: "+index);
     }
     Node current = getNthNode(index);
     return current.getData();
@@ -97,7 +97,7 @@ class MyLinkedList{
 
   public Integer set(int index, Integer value){//changes the value at the index requested
     if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("Index Out of Bounds: "+index);
     }
     Node current = getNthNode(index);
     Integer old = current.getData();
@@ -133,7 +133,7 @@ class MyLinkedList{
   public void add(int index, Integer value){//adds element with entered value at entered index
     if (index < 0 || index > size()){
       //System.out.println(index);
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("Index Out of Bounds: "+index);
     }
     //System.out.println(size);
     if(index == 0){//adding at the beginning
@@ -157,7 +157,7 @@ class MyLinkedList{
 
   public Integer remove(int index){//removes element at entered index
     if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("Index Out of Bounds: "+index);
     }
     //System.out.println(index == size - 1);
     if(index == 0){//removing from the beginning
@@ -205,12 +205,12 @@ class MyLinkedList{
     return false;
   }
 
-  public void extend(MyLinkedList other){
+  public void extend(MyLinkedList other){//combines two lists together
     end.setNext(other.start);
     other.start.setPrev(end);
     end = other.end;
     size += other.size;
-    other.size = 0;
+    other.size = 0;//other list becomes empty
     other.start = null;
     other.end = null;
   }
