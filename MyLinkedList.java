@@ -206,13 +206,22 @@ class MyLinkedList{
   }
 
   public void extend(MyLinkedList other){//combines two lists together
-    end.setNext(other.start);
-    other.start.setPrev(end);
-    end = other.end;
-    size += other.size;
-    other.size = 0;//other list becomes empty
-    other.start = null;
-    other.end = null;
+    if (size == 0){//this list is empty
+      start = other.start;//replaces start and end
+      end = other.end;
+      size = other.size;
+      other.size = 0;//other list becomes empty
+      other.start = null;
+      other.end = null;
+    } else if (other.size != 0){
+      end.setNext(other.start);
+      other.start.setPrev(end);
+      end = other.end;
+      size += other.size;
+      other.size = 0;//other list becomes empty
+      other.start = null;
+      other.end = null;
+    }
   }
 
 }
