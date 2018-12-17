@@ -131,19 +131,23 @@ class MyLinkedList{
   }
 
   public void add(int index, Integer value){//adds element with entered value at entered index
-    if (index < 0 || index >= size()){
+    if (index < 0 || index > size()){
+      //System.out.println(index);
       throw new IndexOutOfBoundsException();
     }
+    //System.out.println(size);
     if(index == 0){//adding at the beginning
       Node newNode = new Node(null, value, start);
       start.setPrev(newNode);
       start = newNode;//changes starting reference
       size++;
-    }else if(index == size - 1){//adding at end is the same as add(value)
+    }else if(index == size){//adding at end is the same as add(value)
       add(value);
     }else{//adding in the middle
       Node prev = getNthNode(index-1);
+      System.out.println(prev);
       Node next = prev.next();
+      System.out.println(next);
       Node newNode = new Node(prev, value, next);
       prev.setNext(newNode);
       next.setPrev(newNode);
